@@ -81,6 +81,11 @@ development:
 #
 production:
   <<: *default
-  database: aws_api_v3_production
-  username: aws_api_v3
-  password: <%= ENV["AWS_API_V3_DATABASE_PASSWORD"] %>
+  # database: aws_api_v3_production
+  # username: aws_api_v3
+  # password: <%= ENV["AWS_API_V3_DATABASE_PASSWORD"] %>
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
